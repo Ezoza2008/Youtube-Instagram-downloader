@@ -24,7 +24,10 @@ def save_langs(data):
 
 user_langs = load_langs()
 
-bot = AsyncTeleBot(token="8699298904:AAEKppKxz_JZkWal_uSyetmv-BhycgUsUx0")
+# ✅ CORRECT — works both locally and on Choreo
+bot = AsyncTeleBot(
+    token=os.environ.get("BOT_TOKEN", "8699298904:AAEKppKxz_JZkWal_uSyetmv-BhycgUsUx0")
+)
 MAX_FILE_SIZE = 50 * 1024 * 1024  # 50 MB
 
 @bot.message_handler(commands=["start"])
