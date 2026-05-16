@@ -77,6 +77,7 @@ def download_video(url):
         'fragment_retries': 5,
         'writesubtitles': True,
         'writeautomaticsub': True,
+         'cookiefile': 'cookies.txt',
     }
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
         info = ydl.extract_info(url, download=True)
